@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/postbuild.mjs",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "netlify deploy --remote --prod"
+    "deploy": "netlify deploy --remote --prod",
+    "deploy:gh-pages": "gh-pages -d out -b gh-pages"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
