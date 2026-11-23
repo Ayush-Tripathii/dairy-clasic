@@ -10,4 +10,4 @@
 :HL["/dairy-clasic/_next/static/media/e84c5cd1ffbefa6f-s.p.1emuuracu50qd.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:[["children",{"s":"__PAGE__","h":128}]]
 1:[["children",{"s":{"n":"locale","t":"d","k":"ru","s":[]},"h":48,"c":"$Q2"}]]
-0:{"b":"puhow5FwZmut6pYCS9KrQ","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"hhu1qAYE3B0NUj4CG0QQc","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
