@@ -60,10 +60,10 @@ export function Collection() {
 
         <ul
           data-grid
-          className="mt-14 grid gap-5 max-sm:-mx-4 max-sm:snap-x max-sm:snap-mandatory max-sm:auto-cols-[80%] max-sm:grid-flow-col max-sm:overflow-x-auto max-sm:px-4 max-sm:pb-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+          className="mt-14 flex gap-5 overflow-x-auto pb-4 max-sm:-mx-[var(--gutter)] max-sm:px-6 max-sm:scroll-pl-6 max-sm:snap-x max-sm:snap-mandatory [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:pb-0"
         >
           {categories.map((c, i) => (
-            <li key={c.slug} data-card className="max-sm:snap-start">
+            <li key={c.slug} data-card className="max-sm:w-[82vw] max-sm:shrink-0 max-sm:snap-start">
               <TransitionLink
                 href={`/collection/${c.slug}`}
                 className="group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] p-6 transition-[transform,box-shadow] duration-500 ease-soft hover:-translate-y-1.5 hover:shadow-[var(--shadow-lg)] focus-visible:-translate-y-1.5 md:p-8"

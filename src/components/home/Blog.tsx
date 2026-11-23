@@ -56,12 +56,12 @@ export function Blog() {
         <Reveal className="mt-12">
           <div
             data-reveal
-            className="grid gap-6 max-sm:-mx-4 max-sm:snap-x max-sm:snap-mandatory max-sm:auto-cols-[85%] max-sm:grid-flow-col max-sm:overflow-x-auto max-sm:px-4 max-sm:pb-4 sm:grid-cols-2 lg:grid-cols-3"
+            className="flex gap-5 overflow-x-auto pb-4 max-sm:-mx-[var(--gutter)] max-sm:px-6 max-sm:scroll-pl-6 max-sm:snap-x max-sm:snap-mandatory [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:pb-0"
           >
             {POSTS.map((post) => (
               <article
                 key={post.slug}
-                className="group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] border border-line/60 bg-white shadow-xs transition-[transform,box-shadow] duration-500 ease-soft hover:-translate-y-1.5 hover:shadow-[var(--shadow-md)] max-sm:snap-start"
+                className="group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] border border-line/60 bg-white shadow-xs transition-[transform,box-shadow] duration-500 ease-soft hover:-translate-y-1.5 hover:shadow-[var(--shadow-md)] max-sm:w-[82vw] max-sm:shrink-0 max-sm:snap-start"
               >
                 <TransitionLink href="/our-story" className="flex h-full flex-col">
                   {/* Article Image Container */}

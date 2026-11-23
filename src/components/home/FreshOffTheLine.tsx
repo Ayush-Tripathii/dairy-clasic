@@ -148,7 +148,7 @@ export function FreshOffTheLine() {
         <ul
           data-track
           data-lenis-prevent
-          className="flex gap-4 sm:gap-5 overflow-x-auto px-[var(--gutter)] pb-3 will-change-transform wide:gap-8 wide:overflow-visible [&::-webkit-scrollbar]:hidden overscroll-x-contain"
+          className="flex gap-4 sm:gap-5 overflow-x-auto px-[var(--gutter)] max-sm:px-6 max-sm:scroll-pl-6 pb-3 will-change-transform wide:gap-8 wide:overflow-visible [&::-webkit-scrollbar]:hidden overscroll-x-contain"
           style={{ scrollbarWidth: "none", touchAction: "pan-x" }}
         >
           {fresh.map((p, i) => (
