@@ -1,0 +1,93 @@
+/*
+ * Dairy Classic design tokens — light theme only.
+ *
+ * Source: dairyclassics.com Elementor CSS (post-15 kit + page CSS).
+ *   #682F26  chocolate brown — headers, headings, footer type
+ *   #FDE8DC  peach cream     — section backgrounds
+ *   #FDEADF  cream           — alternate sections
+ *   #B85D19  warm caramel    — accents / highlights / CTAs
+ *   #D97706  golden toffee, hover state
+ *   #8F420A  caramel-ink (6.5:1 AA)
+ *   #222222 / #111111 — original body text (we use brown for warmth; both pass AA)
+ * Fonts: Montserrat 600 (primary / headings), Poppins 400 (body)
+ *
+ * Contrast (WCAG 2.2, measured on --color-bg #FFF8F3):
+ *   primary  #682F26  9.9:1   ✓ any size
+ *   muted    #865950  5.6:1   ✓ body text (4.9:1 on the darkest card tint)
+ *   red-ink  #C8221F  5.4:1   ✓ body text; white on it 5.7:1
+ *   red      #E7312F  4.1:1   — large display type / decoration only
+ */
+:root {
+  /* Surfaces — always light */
+  --color-bg: #fff8f3;
+  --color-white: #ffffff;
+  --color-surface: #fde8dc;
+  --color-surface-2: #fdeadf;
+  --color-line: #ecd3c6;
+
+  /* Brand */
+  --color-primary: #682f26;
+  --color-primary-deep: #4f231c;
+  --color-secondary: #fde8dc;
+  --color-accent: #b85d19;
+  --color-accent-hover: #d97706;
+  --color-accent-ink: #8f420a;
+
+  /* Type */
+  --color-text: #682f26;
+  --color-text-muted: #865950;
+  --color-on-primary: #fff8f3;
+
+  /* Category tints (8–15% washes of the brand colours) */
+  --tint-cones: #fde8dc;
+  --tint-sticks: #fbe2df;
+  --tint-cups: #f3e6e2;
+  --tint-biscuit: #f9ecdf;
+  --tint-tubs: #fdefe6;
+  --tint-cassatta: #f8dfd9;
+
+  /* Pastel washes for the flavour wheel */
+  --mood-chocolatey: #ead2ca;
+  --mood-fruity: #f9d2d0;
+  --mood-nutty: #f3dec4;
+  --mood-coffee: #e4d0c3;
+  --mood-creamy: #fbe8da;
+  --mood-vanilla: #fbedc6;
+
+  /* Shadows: warm, never grey */
+  --shadow-sm: 0 2px 8px -2px rgb(104 47 38 / 0.12);
+  --shadow-md: 0 14px 34px -14px rgb(104 47 38 / 0.28);
+  --shadow-lg: 0 30px 60px -24px rgb(104 47 38 / 0.35);
+  --shadow-product: 0 40px 50px -30px rgb(104 47 38 / 0.45);
+
+  /* Radius */
+  --radius-sm: 12px;
+  --radius-md: 22px;
+  --radius-lg: 36px;
+  --radius-pill: 999px;
+
+  /* Type scale */
+  --text-display: clamp(1.85rem, 3.5vw, 3.25rem);
+  --text-h2: clamp(1.75rem, 3.2vw, 2.75rem);
+  --text-h3: clamp(1.25rem, 1.8vw, 1.65rem);
+  --text-body: clamp(1.0625rem, 0.3vw + 1rem, 1.1875rem);
+  /* 17 → 19px */
+  --text-small: 0.875rem;
+  --leading-display: 0.9;
+  --leading-body: 1.6;
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-hover: 0.4s;
+
+  /* Layout */
+  --gutter: clamp(1rem, 4vw, 3.5rem);
+  --header-h: 84px;
+}
+
+@media (max-width: 767px),
+(max-height: 559px) {
+  :root {
+    --header-h: 68px;
+  }
+}
