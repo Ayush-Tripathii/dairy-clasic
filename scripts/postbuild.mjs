@@ -7,7 +7,7 @@ if (fs.existsSync(outDir)) {
   // 1. Create .nojekyll
   fs.writeFileSync(path.join(outDir, ".nojekyll"), "");
 
-  // 2. Create root index.html redirecting to ./en/
+  // 2. Create root index.html redirecting cleanly to ./en/
   const redirectHtml = `<!DOCTYPE html>
 <html>
 <head>
@@ -24,11 +24,28 @@ if (fs.existsSync(outDir)) {
 </html>`;
   fs.writeFileSync(path.join(outDir, "index.html"), redirectHtml);
 
-  // 3. Ensure 404.html exists at root of out/
+  // 3. Smart 404.html: Auto-heals malformed URLs (like &alias=...) back to /en/
   const notFoundPath = path.join(outDir, "404", "index.html");
-  if (fs.existsSync(notFoundPath)) {
-    fs.copyFileSync(notFoundPath, path.join(outDir, "404.html"));
-  }
+  let notFoundContent = fs.existsSync(notFoundPath)
+    ? fs.readFileSync(notFoundPath, "utf-8")
+    : redirectHtml;
 
-  console.log("Postbuild: successfully generated .nojekyll, index.html, and 404.html in out/");
+  const recoveryScript = `
+  <script>
+    (function() {
+      var href = window.location.href;
+      if (href.indexOf('&alias') !== -1 || href.indexOf('%26alias') !== -1) {
+        window.location.replace('/dairy-clasic/en/');
+      }
+    })();
+  </script>
+`;
+  if (notFoundContent.includes("<head>")) {
+    notFoundContent = notFoundContent.replace("<head>", "<head>" + recoveryScript);
+  } else {
+    notFoundContent = recoveryScript + notFoundContent;
+  }
+  fs.writeFileSync(path.join(outDir, "404.html"), notFoundContent);
+
+  console.log("Postbuild: successfully generated .nojekyll, index.html, and resilient 404.html in out/");
 }
