@@ -44,5 +44,7 @@ next-env.d.ts
 .netlify
 
 # Raw uncompressed media
-hero-bricket.mp4
+/hero-bricket.mp4
 Product Images/
+!public/videos/hero-bricket.mp4
+!out/videos/hero-bricket.mp4

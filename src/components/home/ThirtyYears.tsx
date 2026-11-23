@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { MQ } from "@/lib/motion";
@@ -21,6 +21,14 @@ export function ThirtyYears() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoPaused, setIsVideoPaused] = useState(false);
   const pillars = t.raw("pillars") as string[];
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {});
+    }
+  }, []);
 
   const toggleVideo = () => {
     if (!videoRef.current) return;
@@ -71,13 +79,16 @@ export function ThirtyYears() {
           <video
             ref={videoRef}
             src="/videos/hero-bricket.mp4"
+            poster="/images/story/factory.webp"
             autoPlay
             muted
             loop
             playsInline
             preload="metadata"
             className="h-full w-full object-cover"
-          />
+          >
+            <source src="/videos/hero-bricket.mp4" type="video/mp4" />
+          </video>
           {/* Pause / Play Button */}
           <button
             type="button"
