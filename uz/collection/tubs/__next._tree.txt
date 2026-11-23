@@ -1,4 +1,4 @@
-:HL["/dairy-clasic/_next/static/chunks/3jyep5tzrq7rj.css","style"]
+:HL["/dairy-clasic/_next/static/chunks/30q0sw0oyv_wh.css","style"]
 :HL["/dairy-clasic/_next/static/media/1361b9baaefe9807-s.p.1d_6dtvtn9g3_.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/dairy-clasic/_next/static/media/22a701959b157a82-s.p.2o7m9ogm38dql.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/dairy-clasic/_next/static/media/65341aea9fb91af5-s.p.1dqa_6e_ad4sj.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -12,4 +12,4 @@
 3:[["children",{"s":{"n":"category","t":"d","k":"tubs","s":[]},"h":96,"c":"$Q4"}]]
 2:[["children",{"s":"collection","h":64,"c":"$Q3"}]]
 1:[["children",{"s":{"n":"locale","t":"d","k":"uz","s":[]},"h":48,"c":"$Q2"}]]
-0:{"b":"hhu1qAYE3B0NUj4CG0QQc","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"YCfMA-anx4T2VXtVpWrgY","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
