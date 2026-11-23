@@ -7,22 +7,12 @@ if (fs.existsSync(outDir)) {
   // 1. Create .nojekyll
   fs.writeFileSync(path.join(outDir, ".nojekyll"), "");
 
-  // 2. Create root index.html redirecting cleanly to ./en/
-  const redirectHtml = `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Dairy Classic</title>
-  <meta http-equiv="refresh" content="0; url=./en/">
-  <script>
-    window.location.replace("./en/" + window.location.search + window.location.hash);
-  </script>
-</head>
-<body>
-  <p>Redirecting to <a href="./en/">Dairy Classic</a>...</p>
-</body>
-</html>`;
-  fs.writeFileSync(path.join(outDir, "index.html"), redirectHtml);
+  // 2. Mirror out/en/* to out/ root so non-prefixed English routes (/collection/, /our-story/, etc.) work statically
+  const enDir = path.join(outDir, "en");
+  if (fs.existsSync(enDir)) {
+    fs.cpSync(enDir, outDir, { recursive: true, force: true });
+    console.log("Postbuild: successfully mirrored out/en/* to out/ root");
+  }
 
   // 3. Smart 404.html: Auto-heals malformed URLs (like &alias=...) back to /en/
   const notFoundPath = path.join(outDir, "404", "index.html");
