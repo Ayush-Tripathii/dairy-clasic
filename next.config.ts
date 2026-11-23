@@ -21,6 +21,7 @@ const legacy: [string, string][] = [
 const nextConfig: NextConfig = {
   output: isExport ? "export" : undefined,
   basePath: isExport ? "/dairy-clasic" : undefined,
+  assetPrefix: isExport ? "/dairy-clasic" : undefined,
   trailingSlash: true,
   turbopack: {
     rules: {

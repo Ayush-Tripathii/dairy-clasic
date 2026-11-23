@@ -47,5 +47,25 @@ if (fs.existsSync(outDir)) {
   }
   fs.writeFileSync(path.join(outDir, "404.html"), notFoundContent);
 
-  console.log("Postbuild: successfully generated .nojekyll, index.html, and resilient 404.html in out/");
+  // 4. Prefix all public assets (/images/, /videos/) with /dairy-clasic in exported files
+  function patchAssetPaths(dir) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        patchAssetPaths(fullPath);
+      } else if (/\.(html|js|json|txt|css)$/.test(entry.name)) {
+        let content = fs.readFileSync(fullPath, "utf-8");
+        const updated = content
+          .replace(/(?<!\/dairy-clasic)\/images\//g, "/dairy-clasic/images/")
+          .replace(/(?<!\/dairy-clasic)\/videos\//g, "/dairy-clasic/videos/");
+        if (updated !== content) {
+          fs.writeFileSync(fullPath, updated, "utf-8");
+        }
+      }
+    }
+  }
+  patchAssetPaths(outDir);
+
+  console.log("Postbuild: successfully generated .nojekyll, index.html, resilient 404.html, and patched asset paths in out/");
 }
