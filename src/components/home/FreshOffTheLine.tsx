@@ -167,8 +167,16 @@ export function FreshOffTheLine() {
                 </span>
               </div>
               <div className="relative my-4 sm:my-5 aspect-[5/6] land:aspect-[4/3] wide:aspect-auto wide:h-[clamp(180px,34vh,340px)]">
-                <div data-stick className="absolute inset-0">
-                  <Image src={p.image!} alt={p.name} fill sizes="(min-width: 768px) 28vw, 70vw" className="object-contain drop-shadow-[0_26px_26px_rgb(104_47_38/0.25)]" />
+                <div data-stick className="absolute inset-0 p-4 sm:p-5">
+                  <div className="relative size-full">
+                    <Image
+                      src={p.image!}
+                      alt={p.name}
+                      fill
+                      sizes="(min-width: 768px) 28vw, 70vw"
+                      className="object-contain drop-shadow-[0_26px_26px_rgb(104_47_38/0.25)]"
+                    />
+                  </div>
                 </div>
               </div>
               <h3 className="font-display text-[clamp(1.35rem,2vw,1.85rem)] leading-none font-extrabold tracking-[-0.03em] text-primary uppercase">{p.name}</h3>
