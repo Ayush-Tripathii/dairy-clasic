@@ -1,0 +1,32 @@
+3:"$Sreact.fragment"
+4:"/dairy-clasic/_next/static/chunks/3qfy96eoyh-ek.js"
+5:I[39756,["$4"],"default"]
+6:I[37457,["$4"],"default"]
+b:"/dairy-clasic/_next/static/chunks/1w54rk_uydx3z.js"
+c:"/dairy-clasic/_next/static/chunks/1a7wkvourwnse.js"
+d:"/dairy-clasic/_next/static/chunks/144ck69x-olrs.js"
+e:"/dairy-clasic/_next/static/chunks/1ox4u7biw-8gw.js"
+f:"CollectionClient"
+10:I[6520,["$b","$c","$d","$e"],"$f"]
+11:I[97367,["$4"],"OutletBoundary"]
+12:"$Sreact.suspense"
+15:"ViewportBoundary"
+16:I[97367,["$4"],"$15"]
+17:"MetadataBoundary"
+18:I[97367,["$4"],"$17"]
+19:I[27201,["$4"],"IconMark"]
+8:X
+8:C
+9:X
+a:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$3","c",{"children":[["$","div",null,{"className":"bg-surface min-h-screen pt-28 pb-24 md:pt-36 md:pb-32","children":["$","div",null,{"className":"container-x","children":[["$","div",null,{"className":"max-w-3xl mb-12","children":[["$","div",null,{"className":"inline-flex items-center gap-2","children":[["$","span",null,{"className":"size-2 rounded-full bg-accent animate-pulse"}],["$","p",null,{"className":"eyebrow tracking-[0.14em] text-accent-ink font-bold","children":"Kolleksiya"}]]}],["$","h1",null,{"className":"display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary mt-3","children":"Olti klassika galereyasi"}],["$","p",null,{"className":"mt-4 text-base sm:text-lg text-muted max-w-xl leading-relaxed","children":"Explore all 44 flavours made with 100% fresh milk, pure chocolate, and natural ingredients in Tashkent since 1996."}]]}],["$","$L10",null,{"translations":{"title":"Olti klassika galereyasi","eyebrow":"Kolleksiya","searchPlaceholder":"Search ice creams by name or flavour...","allCategories":"All Products","filterByMood":"Flavour Mood","allMoods":"All Moods","itemsCount":"products","viewProduct":"View Details","noResults":"No ice creams found matching your filters."}}]]}]}],[["$","script","script-0",{"src":"/dairy-clasic/_next/static/chunks/1ox4u7biw-8gw.js","async":true}]],["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]]}],"p":"$@14","v":null,"s":"$9"}}]]
+2:[["children",{"s":"collection","h":64,"d":{"r":["$","$3","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@7","v":"$8","s":"$9"},"c":"$Qa"}]]
+1:[["children",{"s":{"n":"locale","t":"d","k":"uz","s":[]},"h":48,"c":"$Q2"}]]
+0:{"t":{"t":{"s":"","h":80,"c":"$Q1"},"h":{"r":["$","$3","h",{"children":[null,["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#fff8f3"}],["$","meta","3",{"name":"color-scheme","content":"light"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$12",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Kolleksiya | Dairy Classic"}],["$","meta","1",{"name":"description","content":"Olti klassika galereyasi"}],["$","meta","2",{"name":"application-name","content":"Dairy Classic"}],["$","meta","3",{"property":"og:title","content":"Kolleksiya | Dairy Classic"}],["$","meta","4",{"property":"og:description","content":"Olti klassika galereyasi"}],["$","meta","5",{"property":"og:site_name","content":"Dairy Classic"}],["$","meta","6",{"property":"og:type","content":"website"}],["$","meta","7",{"name":"twitter:card","content":"summary"}],["$","meta","8",{"name":"twitter:title","content":"Kolleksiya | Dairy Classic"}],["$","meta","9",{"name":"twitter:description","content":"Olti klassika galereyasi"}],["$","link","10",{"rel":"icon","href":"/dairy-clasic/icon.png?icon.0c54ob9pddl-2.png","sizes":"192x192","type":"image/png"}],["$","$L19","11",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@1a","v":null,"s":"$9"}},"a":"$@1b","u":"$@1c","b":"GjqMz_llXc0yhsZEmTC5B"}
+13:null
+1c:true
+9:300
+9:C
+1b:0
+7:"$undefined"
+1a:"$undefined"
+14:"$undefined"
