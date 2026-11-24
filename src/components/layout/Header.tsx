@@ -62,14 +62,17 @@ export function Header({ menuOpen, onToggleMenu }: Props) {
       data-menu={menuOpen}
       className="group/header fixed inset-x-0 top-0 z-[90] h-[var(--header-h)] transition-[background-color,box-shadow,backdrop-filter] duration-500 ease-soft data-[scrolled=true]:bg-white/85 data-[scrolled=true]:shadow-[0_1px_0_var(--color-line)] data-[scrolled=true]:backdrop-blur-xl data-[menu=true]:!bg-transparent data-[menu=true]:!shadow-none data-[menu=true]:!backdrop-blur-none"
     >
-      <div className="container-x grid h-full grid-cols-[1fr_auto_1fr] items-center">
+      <div className="container-x flex h-full items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
         <nav aria-label={t("a11y.mainNav")} className="hidden items-center gap-8 md:flex">
           {navLink("/collection", t("nav.collection"))}
           {navLink("/our-story", t("nav.story"))}
         </nav>
-        <div className="md:hidden" />
 
-        <TransitionLink href="/" aria-label={t("a11y.home")} className="justify-self-center rounded-lg">
+        <TransitionLink
+          href="/"
+          aria-label={t("a11y.home")}
+          className="rounded-lg md:justify-self-center"
+        >
           <Image
             src="/images/brand/dairy-classic-logo.png"
             alt="Dairy Classic"
