@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { MQ } from "@/lib/motion";
@@ -34,14 +34,14 @@ export function FreshOffTheLine() {
         });
       });
 
-      // Desktop pinned horizontal scroll
-      mm.add(`${MQ.motion} and ${MQ.wide}`, () => {
+      // Pinned horizontal scroll (both mobile and desktop)
+      mm.add(MQ.motion, () => {
         const track = q<HTMLElement>("[data-track]")[0];
         const pinEl = q<HTMLElement>("[data-pin]")[0];
         const progressEl = q<HTMLElement>("[data-progress]")[0];
         if (!track || !pinEl) return;
 
-        const distance = () => track.scrollWidth - track.clientWidth;
+        const distance = () => Math.max(track.scrollWidth - window.innerWidth, 0);
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -91,52 +91,25 @@ export function FreshOffTheLine() {
     { scope: root },
   );
 
-  // Sync mobile swipe scroll with progress bar
-  useEffect(() => {
-    const track = root.current?.querySelector<HTMLElement>("[data-track]");
-    const progressEl = root.current?.querySelector<HTMLElement>("[data-progress]");
-    if (!track || !progressEl) return;
-
-    const onScroll = () => {
-      if (window.innerWidth < 768 || window.innerHeight < 560) {
-        const max = track.scrollWidth - track.clientWidth;
-        if (max > 0) {
-          const ratio = Math.min(Math.max(track.scrollLeft / max, 0), 1);
-          progressEl.style.transform = `scaleX(${ratio})`;
-        }
-      }
-    };
-    track.addEventListener("scroll", onScroll, { passive: true });
-    return () => track.removeEventListener("scroll", onScroll);
-  }, []);
-
   const scrollPrev = () => {
     const track = root.current?.querySelector<HTMLElement>("[data-track]");
     if (!track) return;
     const card = track.querySelector<HTMLElement>("[data-card]");
-    const width = card ? card.offsetWidth + 16 : 300;
-    if (window.innerWidth >= 768 && window.innerHeight >= 560) {
-      window.scrollBy({ top: -width, behavior: "smooth" });
-    } else {
-      track.scrollBy({ left: -width, behavior: "smooth" });
-    }
+    const width = card ? card.offsetWidth + 16 : 320;
+    window.scrollBy({ top: -width, behavior: "smooth" });
   };
 
   const scrollNext = () => {
     const track = root.current?.querySelector<HTMLElement>("[data-track]");
     if (!track) return;
     const card = track.querySelector<HTMLElement>("[data-card]");
-    const width = card ? card.offsetWidth + 16 : 300;
-    if (window.innerWidth >= 768 && window.innerHeight >= 560) {
-      window.scrollBy({ top: width, behavior: "smooth" });
-    } else {
-      track.scrollBy({ left: width, behavior: "smooth" });
-    }
+    const width = card ? card.offsetWidth + 16 : 320;
+    window.scrollBy({ top: width, behavior: "smooth" });
   };
 
   return (
     <section ref={root} aria-labelledby="fresh-title" className="bg-bg">
-      <div data-pin className="flex flex-col justify-center gap-6 sm:gap-8 overflow-hidden py-14 sm:py-20 wide:h-[100svh] wide:min-h-[100svh] wide:py-0 wide:pt-[calc(var(--header-h)*0.6)]">
+      <div data-pin className="flex min-h-[100svh] h-[100svh] flex-col justify-center gap-6 sm:gap-8 overflow-hidden py-6 sm:py-10 wide:h-[100svh] wide:py-0 wide:pt-[calc(var(--header-h)*0.6)]">
         <div className="container-x flex flex-wrap items-end justify-between gap-4 sm:gap-6">
           <div>
             <p className="eyebrow">{t("eyebrow")}</p>
@@ -175,14 +148,13 @@ export function FreshOffTheLine() {
         <ul
           data-track
           data-lenis-prevent
-          className="flex gap-4 sm:gap-5 overflow-x-auto px-[var(--gutter)] pb-4 will-change-transform wide:gap-8 wide:overflow-visible [&::-webkit-scrollbar]:hidden overscroll-x-contain snap-x snap-mandatory scroll-smooth"
-          style={{ scrollbarWidth: "none", touchAction: "pan-x" }}
+          className="flex w-max gap-4 sm:gap-5 px-[var(--gutter)] pb-4 will-change-transform wide:gap-8 overflow-visible"
         >
           {fresh.map((p, i) => (
             <li
               key={p.slug}
               data-card
-              className="relative flex w-[82vw] max-w-[340px] shrink-0 snap-start flex-col overflow-hidden rounded-[var(--radius-lg)] p-5 sm:p-6 wide:w-[min(28vw,400px)] wide:p-7"
+              className="relative flex w-[82vw] max-w-[340px] shrink-0 flex-col overflow-hidden rounded-[var(--radius-lg)] p-5 sm:p-6 wide:w-[min(28vw,400px)] wide:p-7"
               style={{ background: tints[i % tints.length] }}
             >
               <div className="flex items-center justify-between">
