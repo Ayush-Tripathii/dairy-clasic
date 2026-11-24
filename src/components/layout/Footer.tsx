@@ -3,17 +3,13 @@ import { categories, categoryCount } from "@/lib/catalog";
 import { site } from "@/lib/site";
 import { TransitionLink } from "@/components/ui/TransitionLink";
 import { LangSwitch } from "./LangSwitch";
+import { FooterRights } from "./FooterRights";
 
 const colTitle = "mb-4 font-display text-xs font-semibold tracking-[0.18em] text-muted uppercase";
 const linkCls = "link-draw text-primary";
 
-function currentYear() {
-  return new Date().getFullYear();
-}
-
 export async function Footer() {
   const t = await getTranslations();
-  const year = await currentYear();
 
   return (
     <footer id="site-footer" className="relative overflow-clip bg-surface pt-20 pb-12 md:pb-16 text-primary">
@@ -91,7 +87,7 @@ export async function Footer() {
         </div>
 
         <p className="mt-16 flex flex-wrap justify-between gap-2 border-t border-line pt-6 text-sm text-muted">
-          <span>{t("footer.rights", { year })}</span>
+          <FooterRights />
           <span className="tabular">Est. {site.founded} · Tashkent</span>
         </p>
       </div>
