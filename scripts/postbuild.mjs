@@ -4,8 +4,9 @@ import path from "path";
 const outDir = path.resolve("out");
 
 if (fs.existsSync(outDir)) {
-  // 1. Create .nojekyll
+  // 1. Create .nojekyll and permissive .gitignore for gh-pages
   fs.writeFileSync(path.join(outDir, ".nojekyll"), "");
+  fs.writeFileSync(path.join(outDir, ".gitignore"), "# Allow all deployed assets\n");
 
   // 2. Mirror out/en/* to out/ root so non-prefixed English routes (/collection/, /our-story/, etc.) work statically
   const enDir = path.join(outDir, "en");
